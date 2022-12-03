@@ -18,7 +18,7 @@ fn main() {
 
     println!("Part 1: {}", 
         cal_vec.iter().max().unwrap()
-    );      // print highest number in vector
+    );                                                  // print highest number in vector
 
 
     let last3_sum : i32 =                               // new i32 var
