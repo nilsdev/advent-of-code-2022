@@ -25,7 +25,7 @@ fn main() {
     for _ in 0..3 {
         let max = *cal_vec.iter().max().unwrap();       // get current max value
         top_three.push(max);                            // push max value on top_three vector
-        cal_vec.swap_remove(                            // find next largest elf by: 
+        cal_vec.swap_remove(                            // find next largest elf by: // using swap_remove() to avoid O(n) performance of remove()
             cal_vec.iter()                              // iterating over cal_vec Vector
             .position(|&x| x == max)                    // find index of current max value 
             .unwrap()                                   // and removing current max elf
