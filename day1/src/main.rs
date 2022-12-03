@@ -16,5 +16,15 @@ fn main() {
         }
     }
 
-    println!("{}", cal_vec.iter().max().unwrap());      // print highest number in vector
+    println!("Part 1: {}", 
+        cal_vec.iter().max().unwrap()
+    );      // print highest number in vector
+
+
+    let last3_sum : i32 =                               // new i32 var
+        cal_vec.as_slice()[cal_vec.len() -3 ..]         // last 3 items of vector to slice ("part" of a list)
+        .to_vec()                                       // convert to vector 
+        .iter().sum();                                  // get sum of vector
+
+    println!("Part 2: {:?}", last3_sum);                // print sum
 }
