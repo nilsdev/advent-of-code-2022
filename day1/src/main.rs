@@ -18,15 +18,21 @@ fn main() {
 
     println!("Part 1: {}", 
         cal_vec.iter().max().unwrap()
-    );                                                  // print highest number in vector
+    );                                                   // print highest number in vector
 
+    let mut top_three : Vec<i32> = Vec::new();          // vector to store the top 3 elfes in
 
-    // FIXME: i cant read, this would just return the last 3 elements
-    // let last3_sum : i32 =                               // new i32 var
-    //     cal_vec.as_slice()[cal_vec.len() -3 ..]         // last 3 items of vector to slice ("part" of a list)
-    //     .to_vec()                                       // convert to vector 
-    //     .iter().sum();                                  // get sum of vector
+    for _ in 0..3 {
+        let max = *cal_vec.iter().max().unwrap();       // get current max value
+        top_three.push(max);                            // push max value on top_three vector
+        cal_vec.swap_remove(                            // find next largest elf by: 
+            cal_vec.iter()                              // iterating over cal_vec Vector
+            .position(|&x| x == max)                    // find index of current max value 
+            .unwrap()                                   // and removing current max elf
+        );  
+    }
 
-    // println!("Part 2: {:?}", last3_sum);                // print sum
-    // 
+    println!("Part 2: {:?}", 
+        top_three.iter().sum::<i32>()
+    );                                               // print highest number in vector
 }
