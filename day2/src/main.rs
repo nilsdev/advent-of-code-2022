@@ -1,7 +1,6 @@
 use std::fs;
 
 fn main() {
-    println!("Hello, world!");
     let input_content = fs::read_to_string("./input").expect("Error reading input file");
 
     let mut part1: i32 = 0;
