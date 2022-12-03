@@ -1,3 +1,3 @@
 # advent-of-code-2022
 
-fucked up the commit history, sorry for that
+Forgot to add a .gitignore and pushed rust cache. Should be removed by now.
