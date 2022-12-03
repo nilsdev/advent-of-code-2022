@@ -11,6 +11,7 @@ fn main() {
         let moves = line.split(" ");
         let vec = moves.collect::<Vec<&str>>();
 
+        // there has to be a nicer / scaleable way to do this
         match vec.as_slice() {
             ["A", "X"] => part1 += 1 + 3,
             ["A", "Y"] => part1 += 2 + 6,
