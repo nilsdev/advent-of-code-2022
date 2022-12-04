@@ -9,3 +9,4 @@ Forgot to add a .gitignore and pushed rust cache. Should be removed by now.
 | 1   |    yes |    yes |
 | 2   |    yes |    yes |
 | 3   |    yes |    yes |
+| 4   |    yes |        |
