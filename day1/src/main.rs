@@ -10,6 +10,7 @@ fn main() {
     // create first elf
     calories.push(0);                                    
 
+    // sort colories in reverse and safe it to a new vector named sorted 
     // for line in input_content String
     for line in input_content.lines()  {                
         if line.is_empty() {                            
@@ -29,26 +30,10 @@ fn main() {
     );                                                   
 
     // vector to store the top 3 elfes in
-    let mut top_three : Vec<i32> = Vec::new();          
+    let mut sorted = calories.to_owned();                          
 
-    for _ in 0..3 {
-        // get current max value
-        let max = *calories.iter().max().unwrap();       
-        // push max value on top_three vector
-        top_three.push(max);                            
-        // find next largest elf by: 
-        calories.swap_remove(                           
-            // iterating over calories Vector
-            calories.iter()                             
-            // find index of current max value 
-            .position(|&x| x == max)                    
-            .unwrap()                                   
-        // and removing current max elf 
-        ); 
-    }
-
-    // print highest number in vector
-    println!("Part 2: {:?}", 
-        top_three.iter().sum::<i32>()
-    );                                                  
+    sorted.sort_by(|a, b| b.cmp(a));                    
+    println!("Part 2: {}", 
+        sorted[..3].iter().sum::<i32>()               
+    );
 }

@@ -32,7 +32,6 @@ fn part2(input_content : &String, alphabet : &Vec<char>) {
         }
 
         // println!("{} | {}", index, line); 
-
         if index % 3 == 2 {
             let value : usize = get_letter_value(set.iter().max().unwrap(), alphabet); 
             // println!("{:?} -> {}", set, value); 
